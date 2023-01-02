@@ -1,4 +1,4 @@
 # Réseaux-Comptes-Rendus
 
-I. TP Routage Linux.
-
+I. Routage Linux.
+II . La résolution de noms : service DNS
