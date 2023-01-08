@@ -85,7 +85,7 @@ Les principaux enregistrements:
 
 Le serveur du bâtiment Cyclade est le serveur dns dans lequel j'ai lié Les noms des hotes à leur @Ip.
 
-![Configdns.PNG](configDns.PNG)
+![configDns.PNG](configDns.PNG)
 
 Configs de mes machines :
 

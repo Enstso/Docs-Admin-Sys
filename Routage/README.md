@@ -3,11 +3,11 @@
 ## Contexte
 
 Schéma Logique:
-![schemaLogique.PNG](schemaLogique.PNG)
+![SchemaLogique.PNG](SchemaLogique.PNG)
 
 Sur le logiciel de virtualisation hyperV je crée des commutateurs virtuel que pour les attribuer à mes machines:
 
-![Com.PNG](Com.PNG)
+![com.PNG](com.PNG)
 
 Config hyperV de mon routeurWeb:
 
@@ -30,7 +30,7 @@ Tables de routage des clients après les configurations:
 
 ![config5.PNG](config5.PNG)
 
-![config6.PNG](config6.PNG)
+![config6.PNG](config6.png)
 
 je pense toujours à relancer le service réseau après chaque modification du fichier de conf des interfaces.
 
