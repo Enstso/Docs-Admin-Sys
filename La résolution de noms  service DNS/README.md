@@ -46,6 +46,7 @@ Dans une zone DNS on retrouve des informations d'un domaine comme celles de ses 
 Résumé :
 
 Serveur primaire :
+
 * enregistre les données propres à une partie de l'espace nom de domaine dans une zone.
 
 * a une autorité administratives sur cette zone.
@@ -106,6 +107,6 @@ Sur mon serveur web j'héberge un site web :
 
 ![site.PNG](site.PNG)
 
-Depuis le PC1 je tape le Dns de mon site web :
+Depuis le PC1 je tape le nom de domaine de mon site web :
 
 ![srvsite.PNG](srvsite.PNG)
