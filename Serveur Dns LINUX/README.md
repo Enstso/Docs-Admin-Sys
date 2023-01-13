@@ -1,7 +1,7 @@
 # Serveur Dns Linux
 
 1 . Mise en place :
-## Objectifs :Gérer un domaine et ses enregistrements. Comprendre le fonctionnement des outils de tests DNS.
+## Objectifs : Gérer un domaine et ses enregistrements. Comprendre le fonctionnement des outils de tests DNS.
 
 Pour le serveur Dns Linux il est nécessaire d'installer les paquets bind 9 & bind 9doc.
 
@@ -22,6 +22,14 @@ La ligne include spécifie le nom du fichier contenant les options DNS.
 
 /etc/bind/named.conf.options indique au DNS où chercher les fichiers. Tous les fichiers utilisés par BIND seront relatifs à ce répertoire.
 
+Je vais déclarer mon réseau lan dans mon le fichier named.conf :
+
+![namedconf2.PNG](namedconf2.PNG)
+
+Ensuite j'accepte les requêtes pour réseau interne dans le fichier named.conf.option :
+
+![options.PNG](options.PNG)
+
 ### configuration de ma zone personelle :
 
 * option type master, pour inscrire une nouvelle zone principale 
@@ -39,8 +47,10 @@ Dans mon fichier de zone db.mazone.local :
 
 ![mazone.PNG](mazone.PNG)
 
-J'ai ajouter des enregistrements de type A pour mes différents clients et mon serveur(rtr).
-
-exemple le client 1 = clt1 à pour adresse ipv4 192.168.186.10
+j'ai ajouté un enregistrement de type A rtr qui est mon routeur et mon serveur DNS.
 
 Après cela je redémmare le service bind9 avec la commande systemctl restart bind9
+
+Je vais ensuite configurer la zone inverse :
+
+![db192.PNG](db192.PNG)
