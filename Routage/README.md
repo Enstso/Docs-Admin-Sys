@@ -9,14 +9,14 @@ Sur le logiciel de virtualisation hyperV je crée des commutateurs virtuel que p
 
 ![com.PNG](com.PNG)
 
-Config hyperV de mon routeurWeb:
+Config hyperV de mon routeur:
 
 ![confhyperv.PNG](confhyperv.PNG)
 
  ## I. Configuration et clonage de machines Linux pour créer un serveur et des clients.
 Pour configurer mes différentes interfaces j'edite le fichier /etc/network/interfaces.
 
-Je vais sur le routeur privé je configure mes différentes interfaces en leurs attribuant une adresse statique:
+Je vais sur le routeur je configure mes différentes interfaces en leurs attribuant une adresse statique:
 
 ![config3.PNG](config3.PNG).
 
@@ -45,6 +45,8 @@ client2 vers client1:
 
 ## II. Configuration du routage.
 
+Sur mon routeur :
+
 Pour activer le routage, il faut editer le fichier /etc/sysctl.conf:
 en retirant le '#' à la ligne : net.ipv4.ip_forward=1
 
@@ -52,9 +54,9 @@ en retirant le '#' à la ligne : net.ipv4.ip_forward=1
 
 Il faut ensuite relancer le service avec la commande: systemctl restart procps
 
-La table de routage de mon routeur privé:
+La table de routage de mon routeur :
 
-![config9.jpg](config9.jpg)
+![config9.PNG](config9.png)
 
 Nous allons utilisez un logiciel(Wireshark) permettant d’observer les trames circulant sur le routeur (ping client1 vers client2).
 
@@ -80,41 +82,23 @@ Les trames sélectionnées en bleu sont des trames ARP.
 
 ## III. Routage vers l’extérieur et Internet
 
-Je vais sur la machine de mon routeurweb qui me sert à communiquer avec internet avec la commande ip a je vois les différentes carte réseau sur ma machine.
+Je vais sur la machine de mon routeur, avec la commande ip a je vois les différentes interfaces sur ma machine.
+
+
+L'interface eth0 nous permet de communiquer avec l'extérieur, pour vérifier qu'elle communique avec internet, je tape la commande ping 8.8.8.8 :
 
 ![ipa.PNG](ipa.PNG)
 
-L'interface eth0 est la seul qui possède une adresse ip, pour vérifier qu'elle communique avec internet, je tape la commande ping 0.0.0.0.
 
-Pour trouver les adresses de ma machine je tape la commande ip r qui m'affiche la table de routage.
+Pour que mes machines communiquent avec internet, il est nécessaire de rajouter des routes sur mon routeur.
 
-Pour configurer mes différentes interfaces j'edite le fichier /etc/network/interfaces
-
-j'attribue des adresse statique à chaque interfaces:
-
-![config2.PNG](config2.PNG)
-
-je redémarre le service réseau avec la commande systemctl restart networking.
-
-
-
-J'active le routage, en editant le fichier /etc/sysctl.conf et je tape la commande systemctl restart procps pour relancer ce service.
-
-Je configure ma dernière interface sur mon routeur privée: 
-
-![config10.jpg](config10.jpg)
-
-Configuration de l'interface de mon 3ème client:
-
-![config11.PNG](config11.PNG)
-
-Pour que mes machines communiquent avec internet il est nécessaire de rajouter des routes sur mon routeur Web.
-
-Avant il est nécesaire de configurer les fichiers de confs sshd_config de mes routeurs:
+Avant cela, il est nécesaire de configurer le fichier de conf sshd_config de mon routeur:
 
 ![ssh2.PNG](ssh2.PNG)
 
-Depuis mon routeur privé je vais connecter à distance par ssh vers mon routeur web:
+J'autorise le client, à se connecter à distance à mon routeur et je pense à redémmarer le service ssh avec la commande systemctl restart ssh.
+
+Depuis mon client1 je vais me connecter à distance par ssh à mon routeur :
 
 ![ssh1.PNG](ssh1.PNG)
 
@@ -124,6 +108,9 @@ La connexion:
 
 Je rajoute les routes:
 
-![route1.PNG](route1.PNG)
+ip route add 192.168.186.0 via 192.168.1.111
+
+ip route add 192.168.187.0 via 192.168.1.111
+
 
 Pour continuer, il faut configurer le pare feu du routeur qui sera fait dans un prochain tp.
