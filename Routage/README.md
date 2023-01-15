@@ -56,7 +56,7 @@ Il faut ensuite relancer le service avec la commande: systemctl restart procps
 
 La table de routage de mon routeur :
 
-![config9.PNG](config9.png)
+![config9.PNG](config9.PNG)
 
 Nous allons utilisez un logiciel(Wireshark) permettant d’observer les trames circulant sur le routeur (ping client1 vers client2).
 
