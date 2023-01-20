@@ -1,5 +1,7 @@
 # Serveur Dns Linux
 
+Le Domain Name System ou DNS est un service informatique distribué utilisé qui traduit les noms de domaine Internet en adresse IP ou autres enregistrements. En fournissant dès les premières années d'Internet, autour de 1985, un service distribué de résolution de noms, le DNS est un composant essentiel du développement du réseau.
+
 ## Objectifs : Gérer un domaine et ses enregistrements. Comprendre le fonctionnement des outils de tests DNS.
 
 1 .  <u>Mise en place</u> :
@@ -26,6 +28,8 @@ Pour éviter tous problèmes avec l'ipv6 dans  le fichier named.conf.option à l
 ![options.PNG](options.PNG)
 
 ### configuration de ma zone personelle :
+
+Pour cela on crée les bases de données de chaque zone. Dans chacune de ces bases on retrouve des enregistrements. La base de données de la zone direct contient les enregistrements de type A qui contiennent les correspondances noms-adresses, SOA qui indiquent l'autorité de la zone, NS qui indique un serveur nom pour la zone et CNAME qui correspond au nom canonique et la base de données de la zone inverse contient quant à elle les enregistrements SOA, NS et PTR.
 
 * option type master, pour inscrire une nouvelle zone principale 
 
