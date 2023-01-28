@@ -130,3 +130,6 @@ Sur Wireshark Nous allons analyser les différentes trames DHCP :
 4. Le serveur Dhcp, stocke l'adresse ip du client dans sa bdd et lui répond en lui transmettant le dernier paquet, qui finalise l'attribution de l'adresse Ip(Dhcp ACK).
 
 ![dora.PNG](dora.PNG)
+
+iptable -A FORWARD -i $iflan1 -o ifwan -p udp -s $lan1 --sport 68  --dport 67 -j ACCEPT
+iptables -A FORWARD -i $ifwan -o iflan1  -p udp -s 192.168.1.193 --sport 68 -j ACCEPT 
