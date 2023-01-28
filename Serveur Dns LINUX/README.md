@@ -2,6 +2,9 @@
 
 Le Domain Name System ou DNS est un service informatique distribué utilisé qui traduit les noms de domaine Internet en adresse IP ou autres enregistrements. En fournissant dès les premières années d'Internet, autour de 1985, un service distribué de résolution de noms, le DNS est un composant essentiel du développement du réseau.
 
+Schéma logique :
+
+![Schemalogique.PNG](Schemalogique.PNG)
 ## Objectifs : Gérer un domaine et ses enregistrements. Comprendre le fonctionnement des outils de tests DNS.
 
 1 .  <u>Mise en place</u> :

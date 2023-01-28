@@ -2,6 +2,10 @@
 
 Le protocole DHCP (Dynamic Host Configuration Protocol) est un protocole client/serveur qui fournit automatiquement un hôte IP (Internet Protocol) avec son adresse IP et d'autres informations de configuration associées, telles que le masque de sous-réseau et la passerelle par défaut.
 
+Schéma logique : 
+
+![lab.PNG](lab.PNG)
+
 ## I- Configuration et clonage de machines Linux 
 Dans notre contexte de base, nous avons un routeur, un serveur dns et des clients.
 
@@ -131,5 +135,3 @@ Sur Wireshark Nous allons analyser les différentes trames DHCP :
 
 ![dora.PNG](dora.PNG)
 
-iptable -A FORWARD -i $iflan1 -o ifwan -p udp -s $lan1 --sport 68  --dport 67 -j ACCEPT
-iptables -A FORWARD -i $ifwan -o iflan1  -p udp -s 192.168.1.193 --sport 68 -j ACCEPT 

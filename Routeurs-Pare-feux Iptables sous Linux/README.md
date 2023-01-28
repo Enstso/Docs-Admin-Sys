@@ -1,5 +1,8 @@
 # Routeurs/Pare-feux Iptables sous Linux
 
+Schéma logique :
+
+![lab.PNG](lab.PNG)
 ## I. Installation Iptables
 
 Pour vérifier que l'on a Iptables on tape la commande Iptables -L --line-numbers :
