@@ -78,10 +78,11 @@ Les règles :
 
 ![r4.PNG](r4.PNG)
 
-Je sauvegarde mes règles pour qu'elles s'activent à chaque démarrage :
+Pour que mon script à chaque démmarage, je rajoute cette ligne:
 
 ![sauvegarde.PNG](sauvegarde.PNG)
 
+et je déplace le script dans le répertoire /etc/network/if-pre-id.d/
 L'ensemble des règles :
 
 ![img5.PNG](img5.PNG)
