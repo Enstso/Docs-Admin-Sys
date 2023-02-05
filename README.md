@@ -16,4 +16,4 @@ VII. Serveur OCS Inventory Linux
 
 VIII. Serveur Web Apache Sécurisation via SSL.
 
-IX. Routage Inter VLAN
+IX. VLAN

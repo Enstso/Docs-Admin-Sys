@@ -1,4 +1,6 @@
-#  Routage Inter VLAN
+#  VLAN
+
+VLAN : Un VLAN est un sous réseau  virtuel logique,permettant de réduire le domaine de diffusion et ainsi mieux segmenter le réseau.
 
 ## Introduction 
 
@@ -67,4 +69,124 @@ Je pense bien évidemment à redémarrer le switch, pour sauvegarder les modific
 
 ![f10.PNG](f10.PNG)
 
-## Création de VLAN
+## Création des VLANS
+
+Depuis l'invite de commande CLI, pour créer un vlan je tape les commandes suivantes :
+
+```sh
+vlan numDuVLAN
+```
+
+```sh
+name nomDuVLAN
+```
+
+![f11.PNG](f11.PNG)
+
+pour supprimer un VLAN :
+
+```sh
+no vlan numDuVLAN
+```
+
+pour affecter le VLAN à une interface :
+
+```sh
+interface Fa idD'interface
+```
+
+```sh
+switchport mode access 
+```
+
+```sh
+switchport access vlan numDuVLAN 
+```
+
+![f12.PNG](f12.PNG)
+
+Il est possible d'affecter plusieurs ports en une fois via les commandes :
+
+```sh
+interface range Fa numInterface - numdernièreInterface
+```
+```sh
+switchport mode access 
+```
+
+```sh
+switchport access vlan numDuVLAN 
+```
+
+![f13.PNG](f13.PNG)
+
+Dans mon cas, pour la répartition des ports je suit ce tableau :
+
+![f14.PNG](f14.PNG)
+
+Sur le switch S1E1 :
+
+![f15.PNG](f15.PNG)
+
+
+## Routage InterVLAN
+
+Les différents switch doivent être reliés entre eux, via un lien tagué car les différents terminaux, relier au switch ne le sont pas et cela fait lors d'une communication entre des machines du même VLAN,  l'identifiant du vlan n'est pas présent dans la trame qu'envoie les terminaux, c'est le switch qui se chargera  d'ajouter l'identifiant du vlan dans la trame. 
+
+Pour créer un lien tagué :
+
+```sh
+interface l'interface
+```
+```sh
+switchport mode trunk
+```
+
+```sh
+switchport trunk allowed vlan numsDesVlans
+```
+
+![f16.PNG](f16.PNG)
+
+Les VLANS 10, 20, 30, 40, 60 sont autorisés à passer sur le lien tagué crée sur l'interface gigabit 0/1.
+
+La comminication des vlans entre eux, ce fait via l'intermédiare d'un routeur.
+
+Dans mon cas le lien entre le routeur RTR_LAN et le switch S1E1 se fait sur le port 24 du switch.
+
+Pour cela il est nécessaire de créer des sous interfaces virtuelle.
+
+Pour ajouter des sous interfaces au routeur :
+
+```sh
+interface Fa sous interface
+```
+
+```sh
+encapsulation dot1q 10
+```
+```sh
+ip address adresseIp masque
+```
+![f17.PNG](f17.PNG)
+
+
+Il ne faut pas oublier d'activer l’interface physique du routeur.
+
+```sh
+interface Fa interface
+```
+
+```sh
+no shutdown
+```
+
+![f18.PNG](f18.PNG)
+
+Contexte Final :
+
+![f19.PNG](f19.PNG)
+
+Test communication srv1Vlan10 vers PC2_Vlan10 :
+
+![f20.PNG](f20.PNG)
