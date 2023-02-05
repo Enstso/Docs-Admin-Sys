@@ -181,7 +181,7 @@ interface Fa interface
 no shutdown
 ```
 
-![f18.png](f18.png)
+![f18.PNG](f18.PNG)
 
 Contexte Final :
 
