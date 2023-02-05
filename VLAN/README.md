@@ -126,7 +126,7 @@ Dans mon cas, pour la répartition des ports je suit ce tableau :
 
 Sur le switch S1E1 :
 
-![f15.PNG](f15.PNG)
+![f15.png](f15.png)
 
 
 ## Routage InterVLAN
