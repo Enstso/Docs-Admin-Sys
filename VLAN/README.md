@@ -163,7 +163,7 @@ interface Fa sous interface
 ```
 
 ```sh
-encapsulation dot1q 10
+encapsulation dot1q numVlan
 ```
 ```sh
 ip address adresseIp masque
