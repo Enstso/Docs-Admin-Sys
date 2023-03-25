@@ -10,7 +10,8 @@ Le port 443 est un port utilisé pour les communications sécurisées sur Intern
 
 Schéma logique :
 
-![lan.PNG](lan.PNG)
+![lan.PNG](img/lan.PNG)
+
 ### Objectifs : 	
 
 - Configurer une machine Linux en réseau
@@ -22,29 +23,29 @@ Schéma logique :
 
 enregistrement dns :
 
-![dns.PNG](dns.PNG)
+![dns.PNG](img/dns.PNG)
 
 
-![dns2.PNG](dns2.PNG)
+![dns2.PNG](img/dns2.PNG)
 
 enregistrement dns inverse :
 
-![dns1.PNG](dns1.PNG)
+![dns1.PNG](img/dns1.PNG)
 
 réservation de l'adresse ip auprès du serveur Dhcp :
 
-![dhcp.PNG](dhcp.PNG)
+![dhcp.PNG](img/dhcp.PNG)
 
 Pour que le serveur web  installe des paquets il faut autoriser les ports ftp :
 
-![ftp.PNG](ftp.PNG)
+![ftp.PNG](img/ftp.PNG)
 
 Si un serveur Dns, n'a pas été mis en place il faudra éditer le fichier hosts de toutes les machines, ce qui est long est embétant si on a une centaine de machines dans le réseau.
 
 exemple fichier hosts :
 Pour la résolution du nom du serveur web, nous pouvons éditer le fichier /etc/host et ajouter cette ligne :
 
-![host.PNG](host.PNG)
+![host.PNG](img/host.PNG)
 
 ## Installation et configuration de base d'apache2 :
 
@@ -77,7 +78,7 @@ mkdir /var/www/monsite
 
 je crée deux pages Web une en html, l’autre en PHP :
 
-![ls.PNG](ls.PNG)
+![ls.PNG](img/ls.PNG)
 
 Ensuite je crée le fichier de configuration de mon site :
 
@@ -86,7 +87,7 @@ touch /etc/apache2/sites-available/monsite.conf
 ```
 Je configure, mon virtual host dans mon fichier de conf :
 
-![vh.PNG](vh.PNG)
+![vh.PNG](img/vh.PNG)
 
 ``` sh
 ServerName monsite 	# FQDN permettant l’accès au site
@@ -117,17 +118,17 @@ systemctl reload apache2
 
 Test depuis mon routeur en http :
 
-![site.PNG](site.PNG)
+![site.PNG](img/site.PNG)
 
 Dans le fichier de conf, nous pouvons choisir avec qu'elle index notre site doit démarrer avec la directive DirectoryIndex :
 
-![di.PNG](di.PNG)
+![di.PNG](img/di.PNG)
 
 Pour le test, j'ai mis l'index.php du répertoire de notre site.
 
 au démarrage :
 
-![id1.PNG](id1.PNG)
+![id1.PNG](img/id1.PNG)
 
 
 ## Sécurisation du site avec HTTPS et SSL - Création de certificat autosigné pour le serveur.
@@ -161,7 +162,7 @@ touch  /var/www/secure/index.txt
 
 Dans serial, j'inscris le nombre héxadécimal 01 :
 
-![serial1.PNG](serial1.PNG)
+![serial1.PNG](img/serial1.PNG)
 
 ### Pour la configuration de ssl :
 
@@ -169,11 +170,11 @@ SSL et TLS sont deux protocoles cryptographiques qui permettent l’authentifica
 
 Dans le fichier /etc/ssl/openssl.cnf :
 
-![dir1.PNG](dir1.PNG)
+![dir1.PNG](img/dir1.PNG)
 
 Je modifie la valeur, de la variable dir pour lui indiquer, le répertoire de stokage des certificats  :
 
-![dir2.PNG](dir2.PNG)
+![dir2.PNG](img/dir2.PNG)
 
 Je vais créer le certificat autosigné, car je ne dispose pas d'une autorité de certification.
 
@@ -185,13 +186,13 @@ openssl genrsa -des3 -out monsiteCA.key 2048
 
 Lors de la génération, il est demandé une passphrase. Elle nous servira pour signer les certificats :
 
-![ssl.PNG](ssl.PNG)
+![ssl.PNG](img/ssl.PNG)
 
 Maintenant que j'ai la clé, je vais générer le certificat autosigné:
 
-![ssl1.PNG](ssl1.PNG)
+![ssl1.PNG](img/ssl1.PNG)
 
-![ssl2.PNG](ssl2.PNG)
+![ssl2.PNG](img/ssl2.PNG)
 
 Dans un contexte serieux, les informations saisies devront être correct. De plus pour Common Name, il est important de spécifier le fqdn du serveur web qui héberge le site.
 
@@ -223,7 +224,7 @@ a2enmod ssl
 
 Ajout du nouveau virtual host :
 
-![vh2.PNG](vh2.PNG)
+![vh2.PNG](img/vh2.PNG)
 
 ``` sh
 <VirtualHost *:80>
@@ -248,18 +249,18 @@ SSLCertificateKeyFile /etc/ssl/monsiteCA.key #Fichier qui contient la clé priv�
 
 Test sur mon routeur en https :
 
-![site1.PNG](site1.PNG)
+![site1.PNG](img/site1.PNG)
 
 La connexion est dites non sécurisée :
 
-![nsecu1.PNG](nsecu1.PNG)
+![nsecu1.PNG](img/nsecu1.PNG)
 
 Car elle n'a pas été certifiée par une autorité officielle :
 
-![nsecu2.PNG](nsecu2.PNG)
+![nsecu2.PNG](img/nsecu2.PNG)
 
 Vérifiée par la fausse organisation "no" que j'ai indiqué lors de l'auto signature de mon certificat.
 
 le certificat :
 
-![certificat.PNG](certificat.PNG)
+![certificat.PNG](img/certificat.PNG)

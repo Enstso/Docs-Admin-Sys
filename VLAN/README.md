@@ -8,11 +8,11 @@ Pour l'introduction au routage inter Vlan un lan a rapidement été crée.
 
 Le contexte :
 
-![f1.PNG](f1.PNG)
+![f1.PNG](img/f1.PNG)
 
 Sur packet tracer :
 
-![f2.PNG](f2.PNG)
+![f2.PNG](img/f2.PNG)
 
 Le port Fa0/24 de S1E1 permet de relier le routeur RTR_LAN port FA 0/0.
 
@@ -24,7 +24,7 @@ Les différentes commandes pour configurer les vlans sur les switchs de niveau 2
 
 CLI :
 
-![f3.PNG](f3.PNG)
+![f3.PNG](img/f3.PNG)
 
 il y a 2 status :
 
@@ -36,7 +36,7 @@ Pour passer en mode super-utilisateur il faut taper la commande en.
 
 Pour vérifier la version du matériel je la show version :
 
-![f4.PNG](f4.PNG)
+![f4.PNG](img/f4.PNG)
 
 
 Sur les appareils Cisco les configs se font toujours depuis le mode config et ses sous modes.
@@ -47,7 +47,7 @@ pour enlever une commande, il suffit d'utiliser ma commande no suivie de la comm
 
 
 
-![f5.PNG](f5.PNG)
+![f5.PNG](img/f5.PNG)
 
 je suis d'abord passé en mode super-utilisateur, j'ai ensuite activé le mode terminal.
 
@@ -55,19 +55,19 @@ pour changer le nom de l'appareil je tape la commande hostname suivi du futur no
 
 Pour protéger le mode enable, il est nécessaire de mettre un mot de passe chiffré avec la commande enable secret le mot de passe.
 
-![f6.PNG](f6.PNG)
+![f6.PNG](img/f6.PNG)
 
-![f7.PNG](f7.PNG)
+![f7.PNG](img/f7.PNG)
 
-![f8.PNG](f8.PNG)
+![f8.PNG](img/f8.PNG)
 
 Je configure mes appareils pour ne plus faire apparaître les logs à l'écran et pour éviter une recherche DNS extérieur systématique (en cas d'erreur de commandes) :
 
-![f9.PNG](f9.PNG)
+![f9.PNG](img/f9.PNG)
 
 Je pense bien évidemment à redémarrer le switch, pour sauvegarder les modifications :
 
-![f10.PNG](f10.PNG)
+![f10.PNG](img/f10.PNG)
 
 ## Création des VLANS
 
@@ -81,7 +81,7 @@ vlan numDuVLAN
 name nomDuVLAN
 ```
 
-![f11.PNG](f11.PNG)
+![f11.PNG](img/f11.PNG)
 
 pour supprimer un VLAN :
 
@@ -103,7 +103,7 @@ switchport mode access
 switchport access vlan numDuVLAN 
 ```
 
-![f12.PNG](f12.PNG)
+![f12.PNG](img/f12.PNG)
 
 Il est possible d'affecter plusieurs ports en une fois via les commandes :
 
@@ -118,15 +118,15 @@ switchport mode access
 switchport access vlan numDuVLAN 
 ```
 
-![f13.PNG](f13.PNG)
+![f13.PNG](img/f13.PNG)
 
 Dans mon cas, pour la répartition des ports je suit ce tableau :
 
-![f14.PNG](f14.PNG)
+![f14.PNG](img/f14.PNG)
 
 Sur le switch S1E1 :
 
-![f15.png](f15.png)
+![f15.png](img/f15.png)
 
 
 ## Routage InterVLAN
@@ -146,7 +146,7 @@ switchport mode trunk
 switchport trunk allowed vlan numsDesVlans
 ```
 
-![f16.PNG](f16.PNG)
+![f16.PNG](img/f16.PNG)
 
 Les VLANS 10, 20, 30, 40, 60 sont autorisés à passer sur le lien tagué crée sur l'interface gigabit 0/1.
 
@@ -168,7 +168,7 @@ encapsulation dot1q numVlan
 ```sh
 ip address adresseIp masque
 ```
-![f17.PNG](f17.PNG)
+![f17.PNG](img/f17.PNG)
 
 
 Il ne faut pas oublier d'activer l’interface physique du routeur.
@@ -181,12 +181,12 @@ interface Fa interface
 no shutdown
 ```
 
-![f18.PNG](f18.PNG)
+![f18.PNG](img/f18.PNG)
 
 Contexte Final :
 
-![f19.PNG](f19.PNG)
+![f19.PNG](img/f19.PNG)
 
 Test communication srv1Vlan10 vers PC2_Vlan10 :
 
-![f20.PNG](f20.PNG)
+![f20.PNG](img/f20.PNG)

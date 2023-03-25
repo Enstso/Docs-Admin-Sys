@@ -82,31 +82,31 @@ Les principaux enregistrements:
 
 ## Pratique packet Tracer :
 
-![pkt.PNG](pkt.PNG)
+![pkt.PNG](img/pkt.PNG)
 
 Le serveur du bâtiment Cyclade est le serveur dns dans lequel j'ai lié Les noms des hotes à leur @Ip.
 
-![Configdns.PNG](configDns.PNG)
+![Configdns.PNG](img/configDns.PNG)
 
 Configs de mes machines :
 
-![conf1.PNG](conf1.PNG)
+![conf1.PNG](img/conf1.PNG)
 
-![conf2.jpg](conf2.jpg)
+![conf2.jpg](img/conf2.jpg)
 
 
 test de communication du pc1 vers le pc2 par nom de domaine :
 
-![pc1.PNG](pc1.PNG)
+![pc1.PNG](img/pc1.PNG)
 
 J'ai configuré mon serveur web en lui spécifiant @ip de mon serveur DNS.
 
- ![servweb.PNG](servweb.PNG)
+ ![servweb.PNG](img/servweb.PNG)
 
 Sur mon serveur web j'héberge un site web :
 
-![site.PNG](site.PNG)
+![site.PNG](img/site.PNG)
 
 Depuis le PC1 je tape le nom de domaine de mon site web :
 
-![srvsite.PNG](srvsite.PNG)
+![srvsite.PNG](img/srvsite.PNG)

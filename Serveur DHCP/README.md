@@ -4,7 +4,7 @@ Le protocole DHCP (Dynamic Host Configuration Protocol) est un protocole client/
 
 Schéma logique : 
 
-![lab.PNG](lab.PNG)
+![lab.PNG](img/lab.PNG)
 
 ## I- Configuration et clonage de machines Linux 
 Dans notre contexte de base, nous avons un routeur, un serveur dns et des clients.
@@ -18,7 +18,7 @@ isc-dhcp-server.
 
 Par défaut, lors de l'installation le serveur ne peux s'activer car les plages n'ont pas encore été mise en place.
 
-![error.PNG](error.PNG)
+![error.PNG](img/error.PNG)
 
 ## II- Configuration du serveur dhcp
 
@@ -26,15 +26,15 @@ Pour configurer je vais éditer le fichier /etc/dhcp/dhcpd.conf.
 
 Je commence d'abord par la config général :
 
-![config1.PNG](config1.PNG)
+![config1.PNG](img/config1.PNG)
 
 Config du sous-réseau 192.168.186.0/18 :
 
-![config2.PNG](config2.PNG)
+![config2.PNG](img/config2.PNG)
 
 dans le fichier /etc/default/isc-dhcp-server j'indique le nom de l'interface de mon serveur dhcp dans mon cas eth0 :
 
-![config3.PNG](config3.PNG)
+![config3.PNG](img/config3.PNG)
 
 ## III- Configuration des hosts :
 
@@ -44,7 +44,7 @@ Détail : Liaison entre l'adresse IP et l'adresse mac d'une machine.
 
 Dans le ficher /etc/dhcp/dhcpd.conf Je fais ma réservation dhcp :
 
-![host1.PNG](host1.PNG)
+![host1.PNG](img/host1.PNG)
 
 Je relance le service dhcp avec la commande systemctl restart isc-dhcp-server.
 
@@ -60,16 +60,16 @@ Les étapes de l'installation :
 
 ip du server dhcp :
 
-![relay1.PNG](relay1.PNG)
+![relay1.PNG](img/relay1.PNG)
 
 Si la configuration a bien était faites ce champ peux rester vide :
 
 
-![relay2.PNG](relay2.PNG)
+![relay2.PNG](img/relay2.PNG)
 
 ne rien mettre :
 
-![relay3.PNG](relay3.PNG)
+![relay3.PNG](img/relay3.PNG)
 
 ### Attention :
   si la commande systemctl restart isc-dhcp-server sur le serveur ne marche pas, il faudra tuer les processus dhcpd :
@@ -94,36 +94,36 @@ je relence le service puis je tape la commande ip a
 
  dhcp sur un client (clt1) :
 
-![clt1.PNG](clt1.PNG)
+![clt1.PNG](img/clt1.PNG)
 
 Pour aller plus loin je vais créer nouveau client :
 
-![hyperv.PNG](hyperv.PNG)
+![hyperv.PNG](img/hyperv.PNG)
 
 Je l'ai connecté au switch du réseau 192.168.186.0.
 
 Je tape la commande ip a est cette machine est bien connecté au réseau 186.0 :
 
-![clt3.PNG](clt3.PNG)
+![clt3.PNG](img/clt3.PNG)
 
 De plus il reconnait mes différents terminaux (Dns) :
 
-![ping.PNG](ping.PNG)
+![ping.PNG](img/ping.PNG)
 
 
 Sur le serveur dhcp j'avais configuré pour que la durée seroit de 10 min :
 
-![bail2.PNG](bail2.PNG)
+![bail2.PNG](img/bail2.PNG)
 
 Dans le fichier conf d'inscription des baux, nous pouvons voir que le bail dure bien 10 min :
 
-![bail.PNG](bail.PNG)
+![bail.PNG](img/bail.PNG)
 
 ## VI - Analyse du cycle Dhcp (Dora) :
 
 Sur Wireshark Nous allons analyser les différentes trames DHCP :
 
-![trames.PNG](trames.PNG)
+![trames.PNG](img/trames.PNG)
 
 1. Le nouveau client, diffuse un paquet DHCP à l'adresse de diffusion, pour obtenir une réponse du server Dhcp. Dans notre cas, le paquet est envoyé au relais DHCP, qui est mon routeur 192.168.1.111. Le routeur transmet ce paquet, au serveur Dhcp(192.168.1.193) (Dhcp Discover).
 
@@ -133,5 +133,5 @@ Sur Wireshark Nous allons analyser les différentes trames DHCP :
 
 4. Le serveur Dhcp, stocke l'adresse ip du client dans sa bdd et lui répond en lui transmettant le dernier paquet, qui finalise l'attribution de l'adresse Ip(Dhcp ACK).
 
-![dora.PNG](dora.PNG)
+![dora.PNG](img/dora.PNG)
 

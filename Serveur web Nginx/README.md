@@ -56,7 +56,7 @@ Pour mon cas http://192.168.0.15/
 
 La page qui s’affichera :
   
-![image1.png](image1.png)
+![image1.png](img/image1.png)
 
 Cela me confirme que Nginx a été installé avec succès.
 
@@ -84,7 +84,7 @@ Sudo nano /var/www/Ensdom/index.html
 
 Dans ce fichier j’ai tapé ce code :
  
-![image2.png](image2.png)
+![image2.png](img/image2.png)
 
 ### Etape 5 : Création d’un hôte virtuel (configuration)
 
@@ -92,7 +92,7 @@ Pour créer un hôte virtuel, je commence par créer un fichier de configuration
 
 J’y ajoute : 
 
-![image3.png](image3.png)
+![image3.png](img/image3.png)
 
  Explication : Je commence par créer un bloc « server » = hôte virtuel.
  
@@ -133,13 +133,13 @@ Je mets 0.0.0.0 suivie du nom de mon site
 
 Cela indique que mon site est accessible pour toutes les adresses IP (utilisateurs) de la Vm
 
- ![image4.png](image4.png)
+ ![image4.png](img/image4.png)
 
 ### Étape 8 : Test d’accessibilité au site en local 
 
 Sur mon navigateur j’écris le nom de mon domaine Ensdom :
 
-![image5.png](image5.png)
+![image5.png](img/image5.png)
 
 Mon serveur Nginx a bien traité ma demande.
 
@@ -149,15 +149,15 @@ Pour accueillir la page html, de mon site du projet (slam)  j’ai créé un nou
 J’ai répété ce que j’ai précédemment expliqué, la seule particularité est que ma page html est liée à un code css et elle contient des images. Pour que ma page s’affiche correctement. 
 Dans le dossier que j’ai précédemment créé, je mets ma page html que je renomme en « index.html » et je mets aussi les images et le css.
 
-![image6.png](image6.png)
+![image6.png](img/ image6.png)
   
 fichier de configuration :
 
-![image7.png](image7.png)
+![image7.png](img/ image7.png)
 
 Test : 
 
-![image8.png](image8.png)
+![image8.png](img/ image8.png)
 
 Nginx a bien traité ma demande cela veut dire qu’il y a maintenant 2 domaines dans mon serveur.
 

@@ -6,7 +6,7 @@
 Je crée une Vm de 4Go que je liea un commutateur virtuel externe
 Je lie ma Vm à un commutateur réseau virtuel type : Externe ( je choisis le sw). 
  
-![image1.png](image1.png)
+![image1.png](img/image1.png)
 
 ### 2/Installation de Debian
 
@@ -24,7 +24,7 @@ Après l’installation de la machine virtuelle je me connecte en tant que root.
 
 L’interface eth2 me permet d’avoir internet et de taper les commandes de ce tp :
  
-![image2.png](image2.png)
+![image2.png](img/image2.png)
 
 
 ### 4/ Mise à jour et installation des paquets requis pour le serveur
@@ -33,7 +33,7 @@ Avant de continuer je pense à un faire un apt-get dist-upgrade puis un apt-get 
 
 Une série de paquets devra être installé je tape la commande :
 
-![image3.png](image3.png)
+![image3.png](img/image3.png)
  
 Cela permet d’installer un serveur web dans notre cas apache 2, des modules PHP et Perl, MariaDB et un client Mysql pour pouvoir y accéder.
 
@@ -47,7 +47,7 @@ Une série de question me sera posée je mets Y à tous.
 
 *pour plus précision sur les questions voici les explications du tp du prof : 
 
-![image4.png](image4.png)
+![image4.png](img/image4.png)
 
 Pour créer une base de données pour OCS. 
 J’entre sur My SQL avec la commande suivante :
@@ -64,7 +64,7 @@ Et pour quitter je je tape quit
 
 Pour verifier que ma bdd a bien été créer je tape show databases je vois ma base ocsweb :
 
- ![image5.png](image5.png)
+ ![image5.png](img/image5.png)
 
 ### 6/ Installation d’OCS
 
@@ -81,7 +81,7 @@ Chmod u+x setup.sh
 
 La configuration de la base de données est ci-dessous :
 
-![image6.png](image6.png)
+![image6.png](img/image6.png)
  
 Je serais ensuite accueilli par un assistant qui me posera une série de question j’ai choisie de laisser par défaut
 
@@ -104,9 +104,9 @@ Puis j’édite le fichier /etc/php/7.0/apache2/php.ini et /etc/php/7.0/cli/php.
 -	post_max_size = 100M
 -	upload_max_filesize = 100M
  
- ![image7.png](image7.png)
+ ![image7.png](img/image7.png)
 
- ![image8.png](image8.png)
+ ![image8.png](img/image8.png)
 
  
 je redémarre apache2 pour appliquer les changements :
@@ -118,20 +118,20 @@ Pour l’installation OCS-NG invenory installation
 
 Je remplis les champs suivants de la page de configuration de la base de données d’OCS :
 
-![image9.png](image9.png)
+![image9.png](img/image9.png)
  
 *le mot de passe est siojjr
 
 J’appuis sur send ça été fait avec succès :
 Cela fait que j’ai une bannière verte avec mon login et mon mot de passe qui sont admin
 
-![image10.png](image10.png)
+![image10.png](img/image10.png)
 
 Dans la page de connexion d’OCS Je rentre ces derniers :
 
-![image11.png](image11.png)
+![image11.png](img/image11.png)
 
-![image12.png](image12.png)
+![image12.png](img/image12.png)
  
  
 
@@ -149,7 +149,7 @@ http://172.16.18.237/ocsinventory
 
 Pour cette étape je pense à cocher « Immediately lunch inventory »
  
-![image13.png](image13.png)
+![image13.png](img/image13.png)
 
 b) Installation de l’agent sous Unix (Debian)
 
@@ -162,7 +162,7 @@ Il faut le mettre dans le répertoire de root
 
 tar -xzvf Ocsiventory-Unix-Agent-2.9.0.tar.gz
 
-![image14.png](image14.png)
+![image14.png](img/image14.png)
 
 *Attention s’il y a une seule erreur de syntaxe il faudra recommencer.
 
@@ -185,7 +185,7 @@ Pour Cpan13 = install Nmap:Parser
 Pour Cpan14 = reload
 Pour Cpan15 = quit
  
- ![image15.png](image15.png)
+ ![image15.png](img/image15.png)
 
 Je tape maintenant la commande : apt-get install dmidecode pciutils nmap
 
@@ -195,19 +195,19 @@ Ensuite je tape la commande perl Makefile.PL
 
 J’installe l’agent avec la commande : apt-get install ocsinventory-agent
  
- ![image16.png](image16.png)
+ ![image16.png](img/image16.png)
 
 Pour les questions suivantes :
 
 Je choisis http et j’entre le nom de l’hôte du serveur d’inventaire OCS :
  
- ![image17.png](image17.png)
+ ![image17.png](img/image17.png)
 
 je saisie l’URL Que j’ai mis pour mon installation sur Windows.
 
 http://<172.16.18.237>/ocsinventory/
  
-![image18.png](image18.png)
+![image18.png](img/image18.png)
 
 Pour définir le tag de ma machine j’édite la configuration du paquet ocsinventory-agent ci- dessous, de plus cette commande me permet de faire des modifications:
 
@@ -216,14 +216,14 @@ dkpg-reconfigure ocsinventory-agent
 
 Le tag que nous choisirons est debian1, mon 2nd est :
 
-![image19.png](image19.png)
+![image19.png](img/image19.png)
  
 
 À présent l’agent est enfin configuré.
 
 J’exécute avec la commande ocsinventory-agent —server http://172.16.18.237/ocsinventory/
 
- ![image20.png](image20.png)
+ ![image20.png](img/image20.png)
 
 ### 9/Consultation des remontées
 
@@ -238,7 +238,7 @@ Mot de passe: siojjr
 
 Je clique ensuite sur “All computers”
 
- ![image21.png](image21.png)
+ ![image21.png](img/image21.png)
  
 
 Je peux voir ce qui a été remontée.
@@ -246,10 +246,10 @@ Je peux voir ce qui a été remontée.
 
 Mes machines ont bien été remontées :
  
-![image21.png](image21.png)
+![image21.png](img/image21.png)
 
 
 
 Pour plus d’informations je clique sur le nom en violet d’une des machines que j’ai inventoriées :
  
- ![image22.png](image22.png)
+ ![image22.png](img/image22.png)
