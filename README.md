@@ -1,21 +1,29 @@
-# Réseaux-Comptes-Rendus
+# Réseaux-Comptes-Rendus 
 
-I. Routage Linux.
+## Linux-Hyper V
 
-II. La résolution de noms : service DNS.
+1. Routage Linux.
 
-III. Serveur DNS LINUX
+2. La résolution de noms : service DNS.
 
-IV. Serveur DHCP Linux
+3. Serveur DNS LINUX
 
-V. Routeurs/Pare-feux Iptables sous Linux
+4. Serveur DHCP Linux
 
-VI. Serveur Web NGINX Linux
+5. Routeur/Pare-feu Iptables sous Linux
 
-VII. Serveur OCS Inventory Linux
+6. Serveur Web NGINX Linux
 
-VIII. Serveur Web Apache Sécurisation via SSL.
+7. Serveur OCS Inventory Linux
 
-IX. VLAN
+8. Serveur Web Apache Sécurisation via SSL.
 
-X. Suite VLAN
+9. VLAN
+
+10. Suite VLAN
+
+## Vmware GNS3
+
+11. Routeur/Pare-feu Pfsense
+
+12. Lab01

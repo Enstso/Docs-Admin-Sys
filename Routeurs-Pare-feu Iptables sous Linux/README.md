@@ -1,4 +1,4 @@
-# Routeurs/Pare-feux Iptables sous Linux
+# Routeurs/Pare-feu Iptables sous Linux
 
 Schéma logique :
 
