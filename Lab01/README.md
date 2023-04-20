@@ -18,9 +18,10 @@ je tape write pour enregistrer ma configuration :
 
 ![img](img/f5.PNG) 
 
-Vérifions laa configuration :
+Vérifions la configuration :
 
 ![img](img/f6.PNG) 
+
 Configuration du switch 1 :
 
 ![img](img/f3.PNG) 
