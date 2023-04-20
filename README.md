@@ -2,9 +2,9 @@
 
 ## Linux-Hyper V
 
-1. Routage Linux.
+1. Routage Linux
 
-2. La résolution de noms : service DNS.
+2. La résolution de noms : service DNS
 
 3. Serveur DNS LINUX
 
@@ -16,7 +16,7 @@
 
 7. Serveur OCS Inventory Linux
 
-8. Serveur Web Apache Sécurisation via SSL.
+8. Serveur Web Apache Sécurisation via SSL
 
 9. VLAN
 
@@ -26,4 +26,6 @@
 
 11. Routeur/Pare-feu Pfsense
 
-12. Lab01
+12. Lab01 (routing & switching)
+
+13. Lab02 (VLANS)
