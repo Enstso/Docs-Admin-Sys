@@ -80,3 +80,72 @@ Nous pouvons voir que le client 1 n'est pas accessible car il vient du vlan 10.
 
 
 
+## VTP
+
+VTP signifie "VLAN Trunking Protocol". C'est un protocole de communication utilisé dans les réseaux informatiques pour faciliter la gestion des réseaux VLAN (Virtual LAN).
+
+VTP permet aux commutateurs de communiquer les informations de configuration des VLANs entre eux de manière automatique et cohérente, sans que les administrateurs réseau aient à configurer manuellement chaque commutateur.
+
+
+Pour le mettre en place nous ajouterons un switch supplémentaire, de plus nous mettrons un switch en mode transparent.
+
+- sw1 : mode server
+- sw2 : mode transparent
+- sw3 : mode client
+- sw4 : mode client
+
+
+Sur notre switch nous pouvons que le mode serveur est activé :
+
+![img](img/f11.PNG)
+
+Nous créeons notre domaine de vlans :
+
+![img](img/f12.PNG)
+
+Nous ajoutons un nouveau switch (sw4) :
+
+![img](img/f17.PNG)
+
+Par défaut il est en mode serveur :
+
+![img](img/f13.PNG)
+
+Nous le mettons en mode client :
+
+![img](img/f14.PNG)
+
+Le switch 3 est relié au switch 4 il est nécessaire de configurer le mode trunk :
+
+![img](img/f16.PNG)
+
+Créeons le vlan 40 imprimante sur notre switch 1 qui a le mode server : 
+
+![img](img/f18.PNG)
+
+Sur les switchs 3 et 4  nous pouvons voir que le vlan 40 est bien présent :
+
+![img](img/f19.PNG)
+
+![img](img/f20.PNG)
+
+Essayons de créer un vlan sur notre switch 4 :
+
+![img](img/f21.PNG)
+
+Cela ne marche car il possède le mode client.
+
+
+
+Nous configurons notre switch 2 en mode transparent :
+
+![img](img/f15.PNG)
+
+Nous créeons un nouveau vlan 50 (dev) :
+
+![img](img/f22.PNG)
+
+Le vlan a bien été enregistré.
+
+
+
