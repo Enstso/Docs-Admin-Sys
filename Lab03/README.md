@@ -27,6 +27,8 @@ Configuration de l'interface du client 1 :
 
 ![img](img/f1.PNG) 
 
+Nous pouvons voir que google n'est pas accessible.
+
 Configuration de l'interface du client 2 :
 
 ![img](img/f4.PNG)
@@ -36,7 +38,7 @@ Configuration de l'interface du client 2 :
 
 ### NAT statique 
 
-Je configure mon interface lan 192.168.186.1 et coté wan je le mets en mode dhcp :
+Je configure mon interface lan 192.168.186.1 et coté wan je la mets en mode dhcp :
 
 ![img](img/f2.PNG) 
 
@@ -52,7 +54,7 @@ Nos interfaces :
 
 ![img](img/f6.PNG) 
 
-Depuis le client 1, je ping google pour voir si je communique avec l'extérieur :
+Depuis le client 1, je ping google pour voir si je communique vers l'extérieur :
 
 ![img](img/f7.PNG) 
 
@@ -60,7 +62,7 @@ Cela est un succès.
 
 Inside local address : L'adresse de la machine sur le réseau lan.
 
-Inside Global address : L'adresse traduite à l'intérieur du lan.
+Inside Global address : L'adresse traduite grâce au nat la nouvelle adresse ip fait "référence" à notre hôte du lan.
 
 | Inside local     | Inside Global   | 
 | :--------------- |:---------------:| 
@@ -88,9 +90,16 @@ test client 2 vers google :
 | 192.168.186.11:1025   |   192.168.44.135:1025|  
 
 
+Nous revenons sur notre lab, nous pouvons que l'ip coté wan de l'interface e0/0 n'est plus la même cela est normal car elle est en dhcp :
 
+![img](img/f13.PNG)
 
+### Wireshark 
 
+Analysons les requêtes avec Wireshark :
 
+![img](img/f14.PNG)
 
+Nous pouvons voir que la translation a bien été faîtes :
 
+![img](img/f15.PNG)
