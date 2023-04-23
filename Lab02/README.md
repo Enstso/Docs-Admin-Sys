@@ -1,5 +1,9 @@
 # Lab02 (Vlans)
 
+Vlan : Un VLAN (Virtual Local Area Network) est un réseau local virtuel qui permet de regrouper des périphériques réseau en fonction de critères tels que la fonction, le service, le département ou l'emplacement géographique, indépendamment de leur emplacement physique dans le réseau.
+
+En d'autres termes, il s'agit d'une méthode de segmentation logique d'un réseau physique en plusieurs sous-réseaux distincts, qui peuvent communiquer entre eux selon les besoins. Les VLAN sont souvent utilisés pour améliorer la sécurité et la gestion de réseau, ainsi que pour optimiser les performances en réduisant la taille des domaines de diffusion.
+
 Les équipements réseau de ce lab :
 
 - un routeur

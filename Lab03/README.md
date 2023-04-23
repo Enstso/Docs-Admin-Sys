@@ -64,9 +64,9 @@ Inside local address : L'adresse de la machine sur le réseau lan.
 
 Inside Global address : L'adresse traduite grâce au nat la nouvelle adresse ip fait "référence" à notre hôte du lan.
 
-| Inside local     | Inside Global   | 
-| :--------------- |:---------------:| 
-| 192.168.186.10   |   192.168.44.135|
+| Inside local     | Inside Global   | Outside Local | Outside Global |
+| :---------------: |:---------------| :------------ |:---------------:|
+| 192.168.186.10   |   192.168.44.135|8.8.8.8        |8.8.8.8
 
 
 ### PAT
@@ -79,16 +79,20 @@ test client 1 vers google :
 
 ![img](img/f10.PNG)
 
+Dans ma table nat :
+
+![img](img/f16.PNG)
+
 test client 2 vers google :
 
 ![img](img/f11.PNG)
 
 
-| Inside local     | Inside Global   | 
-| :--------------- |:---------------:| 
-| 192.168.186.10:1024   |   192.168.44.135:1024|
-| 192.168.186.11:1025   |   192.168.44.135:1025|  
 
+| Inside local     | Inside Global   | Outside Local | Outside Global |
+| :---------------: |:---------------| :------------ |:---------------:|
+| 192.168.186.10:1024  |   192.168.44.135:1024|8.8.8.8:1024        |8.8.8.8:1024
+| 192.168.186.11:1025 | 192.168.44.135:1025|8.8.8.8:1025 |8.8.8.8:1025
 
 Nous revenons sur notre lab, nous pouvons que l'ip coté wan de l'interface e0/0 n'est plus la même cela est normal car elle est en dhcp :
 
