@@ -93,3 +93,34 @@ tail –f   /apps/squid/log/access.log
 ![img](img/f22.PNG)
 
 ![img](img/f23.PNG)
+
+### Configuration squidGuard
+
+Nous allons maintenant améliorer la sécurité de squid en lui ajoutant un logiciel qui va permettre l’interdiction de site Web en fonction de blacklists. Il permet bien d’autres options mais nous nous concentrerons sur celles ci. L’utilisation des blacklists nécessite une observation préalable de l’arborescence existante pour chaque groupe d’interdiction.
+
+Renommons le fichier /etc/squidguard/squidGuard.conf,afin de faire le nôtre :
+
+![img](img/f24.PNG)
+
+
+ACL: Un ACL Proxy, ou "Access Control List Proxy" en anglais, est une technique utilisée pour limiter l'accès à un réseau ou à Internet. Cela implique l'utilisation d'un serveur proxy pour filtrer et bloquer les requêtes entrantes ou sortantes en fonction de critères prédéfinis.
+
+L'ACL Proxy utilise une liste de contrôle d'accès pour déterminer si une demande doit être autorisée ou refusée. Cette liste de contrôle d'accès peut être basée sur l'adresse IP de l'utilisateur, le type de demande (par exemple, HTTP ou FTP), le port de destination, le contenu de la demande ou tout autre critère approprié.
+
+L'utilisation d'un ACL Proxy peut aider à renforcer la sécurité du réseau en empêchant les utilisateurs non autorisés d'accéder à des ressources spécifiques, en bloquant les attaques potentielles et en limitant l'exposition du réseau aux menaces externes. Cependant, il est important de noter que l'ACL Proxy n'est pas une mesure de sécurité à elle seule, et doit être utilisé en conjonction avec d'autres techniques de sécurité pour une protection optimale.
+
+![img](img/f25.PNG)
+
+![img](img/f26.PNG)
+
+![img](img/f27.PNG)
+
+![img](img/f28.PNG)
+
+![img](img/f29.PNG)
+
+![img](img/f30.PNG)
+
+![img](img/f31.PNG)
+
+![img](img/f32.PNG)
