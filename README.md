@@ -33,3 +33,5 @@
 14. Lab03 (NAT)
 
 15. Lab04 (routage dynamique EIGRP et OSPF)
+
+16. Lab05 (Proxy squid)
