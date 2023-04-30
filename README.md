@@ -35,3 +35,7 @@
 15. Lab04 (routage dynamique EIGRP et OSPF)
 
 16. Lab05 (Proxy squid)
+
+ ## Cas Booktic
+
+ 17. Cas Booktic
