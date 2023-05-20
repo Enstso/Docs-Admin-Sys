@@ -36,6 +36,8 @@
 
 16. Lab05 (Proxy squid)
 
+17. Active Directory
+
  ## Cas Booktic
 
- 17. Cas Booktic
+ 18. Cas Booktic
