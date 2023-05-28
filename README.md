@@ -38,6 +38,8 @@
 
 17. Active Directory
 
+18. Routeur/Pare-feu Fortinet
+
  ## Cas Booktic
 
- 18. Cas Booktic
+ 19. Cas Booktic
