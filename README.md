@@ -1,30 +1,30 @@
-# Réseaux-Comptes-Rendus 
+# Networks-Sys Write-up
 
 ## Linux-Hyper V
 
-1. Routage Linux
+1. Routing Linux
 
-2. La résolution de noms : service DNS
+2. Name Resolution: DNS Service
 
-3. Serveur DNS LINUX
+3. DNS Server LINUX
 
-4. Serveur DHCP Linux
+4. DHCP Server Linux
 
-5. Routeur/Pare-feu Iptables sous Linux
+5. Router/Firewall with Iptables on Linux
 
-6. Serveur Web NGINX Linux
+6. Web Server NGINX Linux
 
-7. Serveur OCS Inventory Linux
+7. OCS Inventory Server Linux
 
-8. Serveur Web Apache Sécurisation via SSL
+8. Apache Web Server Security via SSL
 
 9. VLAN
 
-10. Suite VLAN
+10. VLAN2
 
 ## Vmware GNS3
 
-11. Routeur/Pare-feu Pfsense
+11. Router/Firewall Pfsense
 
 12. Lab01 (routing & switching)
 
@@ -32,14 +32,14 @@
 
 14. Lab03 (NAT)
 
-15. Lab04 (routage dynamique EIGRP et OSPF)
+15. Lab04 (Dynamic Routing: EIGRP and OSPF)
 
 16. Lab05 (Proxy squid)
 
 17. Active Directory
 
-18. Routeur/Pare-feu Fortinet
+18. Router/Firewall Fortinet
 
- ## Cas Booktic
+ ## Booktic Case
 
- 19. Cas Booktic
+ 19. Booktic Case
